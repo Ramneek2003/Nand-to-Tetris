@@ -16,4 +16,3 @@ the ALU chip of the Hack computer. (HalfAdder, FullAdder, Add16, Inc16, ALU)
 ### ✅ WW27
 - **Project 3:** Build memory units (DFF, Bit, Register, RAM, RAM8, RAM64, RAM512, RAM4K, RAM16K, PC)  
 - **Module 6:** Machine Language  
-- **Project 4:** Hack Assembler
