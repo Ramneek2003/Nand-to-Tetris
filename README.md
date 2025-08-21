@@ -30,3 +30,8 @@ Nand to Tetris course assignments
 
 - **Project 5:** Computer Architecture
 - **Module 8:** Assembler
+
+### ✅ WW31
+
+- **Project 5:** Assembler
+- **Module 1,2:** Nand to Tetris Part 2
