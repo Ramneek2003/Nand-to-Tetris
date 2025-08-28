@@ -33,7 +33,7 @@ Nand to Tetris course assignments
 
 ### ✅ WW31
 
-- **Project 5:** Assembler
+- **Project 6:** Assembler
 - **Module 1,2:** Nand to Tetris Part 2: Intoduction, Machine Language
 
 ### ✅ WW32
