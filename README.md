@@ -33,5 +33,15 @@ Nand to Tetris course assignments
 
 ### ✅ WW31
 
-- **Project 6:** Assembler
-- **Module 1,2:** Nand to Tetris Part 2
+- **Project 5:** Assembler
+- **Module 1,2:** Nand to Tetris Part 2: Intoduction, Machine Language
+
+### ✅ WW32
+
+- **Module 3:** Virtual Machine 1: Stack Arithmetic
+- **Project 7:** Virtual Machine 1: Stack Arithmetic
+
+### ✅ WW34
+
+- **Module 4:** Virtual Machine 2: Program Control
+- **Project 8:** Virtual Machine 2: Program Control
