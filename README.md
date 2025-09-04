@@ -49,4 +49,4 @@ Nand to Tetris course assignments
 ### ✅ WW35
 
 - **Module 5:** High Level Language
-- **Project 9:** Suqare Game in Jack
+- **Project 9:** Square Game in Jack
