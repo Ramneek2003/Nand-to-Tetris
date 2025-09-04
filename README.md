@@ -45,3 +45,8 @@ Nand to Tetris course assignments
 
 - **Module 4:** Virtual Machine 2: Program Control
 - **Project 8:** Virtual Machine 2: Program Control
+
+### ✅ WW35
+
+- **Module 5:** High Level Language
+- **Project 9:** Suqare Game in Jack
