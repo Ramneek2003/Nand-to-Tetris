@@ -1,0 +1,77 @@
+/** Implements the square game- controls */
+class SquareGame{
+    field Square square;
+    field int direction;  // 0 = none, 1 = up, 2 = down, 3 = left, 4 = right
+
+    constructor SquareGame new(){
+        let square= Square.new(0,0,30);
+        let direction=0;
+        return this;
+    }
+
+    method void dispose(){
+        do Square.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method void moveSquare(){
+        if(direction==1){
+            do Square.moveUp();
+        }
+        if(direction==2){
+            do Square.moveDown();
+        }
+        if(direction==3){
+            do Square.moveLeft();
+        }
+        if(direction==4){
+            do Square.moveRight();
+        }
+
+        do Sys.wait(5); //delays the next movement
+        return;
+    }
+
+    method void run(){
+        var char key; // the key currently pressed by the user. when release 0
+        vr boolean exit;
+        let exit = false;
+
+        while(~exit){
+            // waits for a key to be pressed
+            while(key==0){
+                let key = Keyboard.keyPressed();
+                do moveSquare();
+            }
+
+            if(key==81){
+                let exit=true; // q key
+            }
+            if(key == 90){
+                do square.decSize(); // z key
+            }
+            if(key == 88){
+                do square.incSize(); // z key
+            }
+            if(key == 131){
+                let direction=1; // up arrow
+            }
+            if(key == 133){
+                let direction=2; // down arrow
+            }
+            if(key == 130){
+                let direction=3; // left arrow
+            }
+            if(key == 132){
+                let direction=4; // right arrow
+            }
+
+            while(~(key=0)){
+                let key = Keyboard.keyPressed();
+                do moveSquare();
+            }
+        }
+        return;
+    }
+}
