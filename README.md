@@ -50,3 +50,8 @@ Nand to Tetris course assignments
 
 - **Module 5:** High Level Language
 - **Project 9:** Square Game in Jack
+
+### ✅ WW36
+
+- **Module 6:** Syntax Analysis
+- **Project 10:** Syntax Analyzer
