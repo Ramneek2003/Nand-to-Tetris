@@ -55,3 +55,12 @@ Nand to Tetris course assignments
 
 - **Module 6:** Syntax Analysis
 - **Project 10:** Syntax Analyzer
+
+### ✅ WW38
+
+- **Module 7:** Code Generation
+- **Project 11:** Code Generation
+
+### ✅ WW39
+
+- **Project 11:** Code Generation
