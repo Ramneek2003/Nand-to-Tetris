@@ -1,0 +1,88 @@
+class Memory{
+    static Array memory;
+    statis Array freeList;
+    static Array memoryBottom;
+
+    static int heapBase;//2048
+    statis int heapBottom;//16384
+
+    static int LENGTH;//the segment's length
+    static int NEXT;//pointer to the next segment in the list
+
+    static int ALLOC_LENGTH; //the alloc block's length
+
+    funtion void init(){
+        let heapBase= 2048;
+        let heapBottom= 16384;
+        
+        let memory=0; // RAM base
+        let freeList= heapBase;
+        let LENGTH=0;
+        let NEXT=1;
+        let freeList[LENGTH]= heapBottom- heapBase;
+        let freeList[NEXT]= null;
+        let ALLOC_LENGTH=-1;
+
+        return;
+    }
+
+    function void poke(int address, int val){
+        let memory[address]= val;
+        return;
+    }
+
+    function int peek(int address){
+        return memory[address];
+    }
+
+    // Best fit algorithm
+    function Array bestFit(int size){
+        var Array currBlock, bestBlock;
+        var int currSize, bestSize;
+
+        let bestBlock= null;
+        let bestSize= heapBottom- heapBase;
+        let currBlock= freeList;
+
+        if(currBlock[NEXT]=null){
+            return currBlock;
+        }
+
+        while(~(currBlock=null)){
+            let currSize= currBlock[LENGTH]-1;
+
+            if(~(currSize < size) & (currSize < bestSize)){
+
+                let bestBlock = currBlock;
+                let bestSize = currSize;
+
+            }
+            let currBlock= currBlock[NEXT];
+        }
+
+        return bestBlock;
+    }
+
+
+    function int alloc(int size){
+        var Array foundBlock, nextBlock, result;
+        let foundBlock= Memory.bestFit(size);
+        let result= foundBlock+1;
+
+        if(~(foundBlock=null)){
+            if(foundBlock[LENGTH]>(size+3)){
+                let nextBlock= foundBlock+size+1;
+                let nextBlock[NEXT]= foundBlock[NEXT];
+                let nextBlock[LENGTH]= foundBlock[LENGTH] -size -1;
+                let result[ALLOC_LENGTH]= size+1;
+                let freeList= nextBlock;
+            }else{
+                let nextBlock= foundBlock[NEXT];
+                let result[ALLOC_LENGTH]= foundBlock[LENGTH];
+            }
+            let foundBlock= nextBlock;  
+        }
+
+        return result;
+    }
+}
