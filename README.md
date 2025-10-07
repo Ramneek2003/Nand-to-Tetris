@@ -64,3 +64,8 @@ Nand to Tetris course assignments
 ### ✅ WW39
 
 - **Project 11:** Code Generation
+
+### ✅ WW40-41
+
+- **Module 8:** Operating System
+- **Project 12:** Operating System
