@@ -85,4 +85,57 @@ class Memory{
 
         return result;
     }
+
+    function void deAlloc(int object) {
+        var Array prevBlock, nextBlock;
+        var int size;
+
+        let size= object[ALLOC_LENGTH];
+        let object= object-1;
+        let prevBlock= Memory.findPrevFree(object);
+
+
+        if(prevBlock = null){
+            let object[LENGTH]= size;
+            let object[NEXT] = freeList;
+            let freeList = object;
+        }
+        else{
+            if((prevBlock+ prevBlock[LENGTH]) = object){
+                let prevBlock[LENGTH] = prevBlock[LENGTH] + size;
+                let object = prevBlock;
+            }
+            else{
+                let object[LENGTH] = size;
+                let object[NEXT] = prevBlock[NEXT];
+                let prevBlock[NEXT] = object;
+            }
+        }
+
+        // check if this block can be joined to the next block
+        if((object + object[LENGTH]) = object[NEXT]){
+            let nextBlock = object[NEXT];
+            let object[LENGTH] = object[LENGTH] + nextBlock[LENGTH];
+            let object[NEXT] = nextBlock[NEXT];
+        }
+
+        return;
+    }
+
+    function Array findPrevFree(int object){
+        var Array prevBlock;
+
+        if(freeList>object){
+            return null;
+        }
+
+        let prevBlock = freeList;
+        //prevBlock.next != null && prevBlock.next < object
+
+        while(~(prevBlock[NEXT] = null) & (prevBlock[NEXT] < object)){
+            let prevBlock = prevBlock[NEXT];
+        }
+
+        return prevBlock;
+    }
 }
